@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+    <LINK REL=StyleSheet HREF="css/validaciones.css" TYPE="text/css" MEDIA=screen>
+    <title>Prueba Effiteco Kaptar</title>
+  </head>
+  <body style="background-color: #fafbfd;">
+<div  style = "float: left;width: 25%;border: 20px; margin: 20px;" ></div>
+<div style = "float: left;width: 50%;border: 20px; margin: 20px;">
+        <h3>Formulario de inscripcion</h3>
+        <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Nombre</label>
+              <input type="text" class="form-control" id="Nombre" aria-describedby="emailHelp" maxlength="20" placeholder="Ingrese el nombre" onChange="soloLetras('Nombre');">
+              <small id="emailHelp" class="form-text text-muted">solo caracteres, longitud 20 caracteres.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Apellido</label>
+                <input type="text" class="form-control" id="Apellido" aria-describedby="emailHelp" maxlength="20" placeholder="Ingrese el apellido" onChange="soloLetras('Apellido');">
+                <small id="emailHelp" class="form-text text-muted">solo caracteres, longitud 20 caracteres.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Telefono</label>
+                <input type="text" class="form-control" id="Telefono" aria-describedby="emailHelp" maxlength="7" placeholder="Ingrese el Telefono" onChange="validarSiNumero('Telefono');">
+                <small id="emailHelp" class="form-text text-muted">solo números, longitud 7 caracteres.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Direccion</label>
+                <input type="text" class="form-control" id="Direccion" aria-describedby="emailHelp" maxlength="50" placeholder="Ingrese la direccion" onChange="">
+                <small id="emailHelp" class="form-text text-muted">máximo 50 caracteres.</small>
+              </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Contraseña</label>
+              <input type="password" class="form-control" id="Contraseña" minlength="6" placeholder="Contraseña">
+              <small id="emailHelp" class="form-text text-muted">longitud mínima 6 caracteres</small>
+            </div>
+            <button type="button" class="btn btn-outline-success btn-lg btn-block" onclick="Registrame()">Registrame</button>
+            <button type="button" class="btn btn-outline-success btn-lg btn-block" onclick="Login()">Ingresar</button>
+          </form>
+
+</div>
+  </body>
+<script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-app.js"></script>
+
+<!-- Add additional services that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-functions.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.1/firebase-storage.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBPeCsTkWfP1_i0kjaE2l-pJQISnHTzTx0",
+    authDomain: "ornate-justice-233016.firebaseapp.com",
+    databaseURL: "https://ornate-justice-233016.firebaseio.com",
+    projectId: "ornate-justice-233016",
+    storageBucket: "ornate-justice-233016.appspot.com",
+    messagingSenderId: "373307226925"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="formulario.js"></script>
+<script src="comprobaciones.js"></script>
+</html>
